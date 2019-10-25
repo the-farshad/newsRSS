@@ -18,9 +18,17 @@ else:
             pageCode = pageRSS.status_code
             print(pageCode)
             if (pageCode != 200):
-                print(f'RSS file not loaded, Response {pageCode} check connection and try again')
+                print(f'Link file not loaded, Response {pageCode} check connection and try again')
                 continue
             soupReady = bs4.BeautifulSoup(pageGet.content, 'lxml')
-            titleField = soupReady.select("div.col-xs-12.no-padding.news-reader.bg-white.no-gutter h1")
+            titleField = soupReady.select("div#PrintArea.col-xs-12.no-padding.news-reader.bg-white.no-gutter h1")
             print(titleField)
-            dateField = soupReady.find("span" , id="registerdate")
+            if (titleField != []):
+                print(titleField[0].text)
+                dateField = soupReady.find("span" , class_="registerdate")
+                print(f"Data added {dateField.text} ")
+                imgLink = soupReady.find("img", id="img-responsive")
+                print(imgLink["src"])
+            break
+        break
+
