@@ -1,13 +1,24 @@
 # newsRSS
-Get rss feed and give Title, Image, Description and Date with API
 
-*Must be install:*
-1. ```pip install requests```
+Read the [Kurdistan24](https://www.kurdistan24.net) RSS feeds and print the
+title, publication date and lead image of each article.
 
-You can use 
-* ```pip install -r requirements.txt```
+## Requirements
 
+- Python 3
 
-> May the force be with you
-###### Good Luck!
-- [x] Must Be Added
+Install the dependencies:
+
+```sh
+pip install -r requirements.txt
+```
+
+## Usage
+
+```sh
+python newsRSS.py
+```
+
+## License
+
+Released under the [GPL-3.0](LICENSE) license.
